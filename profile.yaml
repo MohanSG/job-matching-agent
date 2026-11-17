@@ -1,0 +1,54 @@
+search:
+  titles:
+    - junior developer
+    - junior software developer
+    - junior full stack developer
+    - junior technical analyst
+    - graduate software developer
+    - junior python developer
+    - junior web developer
+    - junior react developer
+    - associate software engineer
+    - software developer trainee
+    - junior backend developer
+  location: London
+  radius_miles: 15
+  results_per_title: 50
+
+filters:
+  exclude_title_words:
+    - senior
+    - lead
+    - principal
+    - manager
+    - head of
+    - intern
+  exclude_companies:
+    - itol
+
+profile:
+  summary:
+    "Full-stack developer with a First Class BSc in Computer Science from the University of Westminster. I work mainly in Python and JavaScript, with Flask, React, PostgreSQL and Docker, and started out as a developer in C#, ASP.NET and SQL Server.
+    I build web apps and take them all the way to live. Hello Chinese is an enrolment platform I built for a language school and still maintain, where parents book classes and the school sees every registration. I’m also building a job matching agent that scores listings with the OpenAI API.
+    Looking for an entry level or junior developer role in London."
+  skills:
+    - HTML
+    - CSS
+    - JavaScript
+    - Python
+    - Flask
+    - React
+    - Docker
+    - SQL
+    - Postgres
+    - REST APIs
+    - GitHub
+    - Windows, Linux, macOS
+  wants:
+    - junior or entry-level roles
+    - Python, SQL, PostgreSQL, React, Docker
+    - London, hybrid or remote
+  dealbreakers:
+    - requires 3+ years commercial experience
+    - requires security clearance
+    - commission-only pay
