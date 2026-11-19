@@ -28,7 +28,7 @@ def main():
 
     detailed_jobs = add_full_descriptions(filtered_jobs)
 
-    score_jobs(detailed_jobs[6], profile["profile"])
+    score_jobs(detailed_jobs, profile["profile"])
 
 if __name__ == "__main__":
     main()

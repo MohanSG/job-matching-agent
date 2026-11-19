@@ -62,21 +62,22 @@ def build_user_message(job, profile):
 """
 
 
-def score_jobs(job, profile):
-    response = client.responses.create(
-        model=os.environ["SCORE_MODEL"],
-        instructions=PROMPT,
-        input=build_user_message(job, profile),
-        text={
-            "format": {
-                "type": "json_schema",
-                "name": "job_score",
-                "strict": True,
-                "schema": SCHEMA,
-            }
-        },
-    )
-    result = json.loads(response.output_text)
-    result['job'] = {'name' : job["jobTitle"],
-                     'company' : job["employerName"]}
-    print(result)
+def score_jobs(jobs, profile):
+    for job in jobs:
+        response = client.responses.create(
+            model=os.environ["SCORE_MODEL"],
+            instructions=PROMPT,
+            input=build_user_message(job, profile),
+            text={
+                "format": {
+                    "type": "json_schema",
+                    "name": "job_score",
+                    "strict": True,
+                    "schema": SCHEMA,
+                }
+            },
+        )
+        result = json.loads(response.output_text)
+        result['job'] = {'name' : job["jobTitle"],
+                        'company' : job["employerName"]}
+        print(result)
