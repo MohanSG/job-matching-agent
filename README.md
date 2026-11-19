@@ -1,6 +1,6 @@
 # Job Matching Agent
 
-A Python tool that pulls junior developer jobs from the Reed API and scores each one against my profile with the OpenAI API, so I only read the ones worth applying for.
+A Python tool that pulls junior developer jobs from the Reed API and scores each one against my profile with the OpenAI API, so I only read the ones that suit me.
 
 ## Why I built it
 
