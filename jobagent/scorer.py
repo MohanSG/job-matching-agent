@@ -1,6 +1,7 @@
 from openai import OpenAI
 import os
 import json
+from jobagent.db import insert_job
 
 client = OpenAI()
 PROMPT = """
@@ -62,7 +63,8 @@ def build_user_message(job, profile):
 """
 
 
-def score_jobs(jobs, profile):
+def score_jobs(jobs, profile, source):
+    print("--SCORING JOBS--")
     for job in jobs:
         response = client.responses.create(
             model=os.environ["SCORE_MODEL"],
@@ -80,4 +82,8 @@ def score_jobs(jobs, profile):
         result = json.loads(response.output_text)
         result['job'] = {'name' : job["jobTitle"],
                         'company' : job["employerName"]}
-        print(result)
+        
+        insert_job(job, result, source)
+        print(f"--JOB {job["jobTitle"]} - {job["employerName"]} SCORE: {result["score"]}, INSERTED INTO JOBS TABLE")
+
+    print(f"{len(jobs)} JOBS INSERTED INTO JOBS TABLE")
